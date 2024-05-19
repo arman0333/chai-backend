@@ -2,8 +2,8 @@
 
 
 
-import { EventEmitter } from 'events';
-EventEmitter.defaultMaxListeners = 20; 
+// import { EventEmitter } from 'events';
+// EventEmitter.defaultMaxListeners = 20; 
 import dotenv from "dotenv"
 
 // import mongoose from "mongoose";
@@ -16,7 +16,16 @@ dotenv.config({
     path:"./env"
 })
 
-connectDB();
+connectDB()
+.then(()=>{
+app.listen(process.env.PORT || 8000,()=>{
+    console.log(`server is running on port :${process.env.PORT || 8000}`)
+})
+})
+.catch((err)=>{
+    console.log("Connection failed with MONGODB")
+})
+
 
 /*
 import express  from "express";
