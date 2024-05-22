@@ -11,12 +11,20 @@
 // });
 // export default router;
 
-import { Router } from "express";
+// import { Router } from "express";
+// import { registerUser } from "../controllers/user.controller.js";
+
+// const router = Router()
+
+// router.route("/register").post(registerUser)
+
+
+// export default router
+import express from "express";
 import { registerUser } from "../controllers/user.controller.js";
 
-const router = Router()
+const router = express.Router();
 
+// router.post("/register", registerUser);
 router.route("/register").post(registerUser)
-
-
-export default router
+export default router;
