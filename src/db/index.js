@@ -11,7 +11,7 @@ import { DB_NAME } from "../constants.js";
         }
     catch(error){
         console.log("DB is not connected")
-        console.log("Error:",error);
+        console.log("Error:",error.message);
         process.exit(1);
     }
 }
