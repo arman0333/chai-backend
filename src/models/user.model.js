@@ -21,7 +21,7 @@ const userSchema = new Schema({
         lowercase:true,
         trim:true
     },
-    fullname:{
+    fullName:{
         type:String,
         required:true,
         index:true,
@@ -69,7 +69,7 @@ userSchema.methods.generateAccessToken = function(){
             _id:this.id,
             email:this.id,
             username:this.username,
-            fullname:this.fullname
+            fullName:this.fullName
 
         },
         process.env.ACCESS_TOKEN_SECRET,
@@ -85,7 +85,7 @@ userSchema.methods.generateRefreshToken = function(){
             _id:this.id,
             email:this.id,
             username:this.username,
-            fullname:this.fullname
+            fullName:this.fullName
 
         },
         process.env.REFRESH_TOKEN_SECRET,
